@@ -1,0 +1,120 @@
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      overflow-x: hidden;
+      height: 100vh;
+      background: 
+    linear-gradient(rgba(87, 87, 87, 0.5), rgba(15, 15, 15, 0.5)), /* overlay hitam transparan */
+    url("https://i.ytimg.com/vi/L5gM-zuIzJc/maxresdefault.jpg") no-repeat center center/cover;
+      position: relative;
+      color: rgb(230, 221, 221);
+    }
+
+    /* NAVBAR */
+    .navbar {
+      position: absolute;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 40px;
+      font-size: 20px;
+      font-weight: bold;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+      z-index: 100;
+    }
+    .navbar a {
+      color: white;
+      text-decoration: none;
+      position: relative;
+    }
+    .navbar a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -5px;
+      width: 0;
+      height: 2px;
+      background: rgb(27, 48, 233);
+      transition: width 0.3s;
+    }
+    .navbar a:hover::after {
+      width: 100%;
+    }
+
+    /* TEKS VERTIKAL KIRI */
+    .vertical-text {
+      position: absolute;
+      top: 20%;
+      left: 20px;
+      writing-mode: vertical-rl;
+      font-size: 22px;
+      line-height: 2;
+      text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
+      animation: fadeInLeft 2s ease-out;
+    }
+
+    /* SOSMED ICONS */
+    .social {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      display: flex;
+      gap: 15px;
+    }
+    .social a {
+      font-size: 26px;
+      color: white;
+      transition: transform 0.3s;
+    }
+    .social a:hover {
+      transform: scale(1.2);
+      color: #2331ee;
+    }
+
+    /* LOGO & JUDUL */
+    .logo-title {
+      position: absolute;
+      bottom: 50px;
+      right: 50%;
+      transform: translateX(50%);
+      text-align: center;
+      animation: bounceIn 2s ease;
+    }
+    .logo-title h1 {
+      font-size: 38px;
+      text-shadow: 2px 2px 6px rgba(0,0,0,0.8);
+    }
+
+    /* KARAKTER DORAEMON */
+    .character {
+      position: absolute;
+      bottom: 0;
+      right: 50px;
+      width: 350px;
+      animation: float 4s ease-in-out infinite;
+    }
+    
+    /* ANIMASI */
+    @keyframes float {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-15px); }
+      100% { transform: translateY(0); }
+    }
+    @keyframes fadeInLeft {
+      0% { opacity: 0; transform: translateX(-100px); }
+      100% { opacity: 1; transform: translateX(0); }
+    }
+    @keyframes bounceIn {
+      0% { transform: scale(0.3) translateY(100px); opacity: 0; }
+      50% { transform: scale(1.1) translateY(-10px); opacity: 1; }
+      100% { transform: scale(1) translateY(0); }
+    }
+
+    img{
+        filter: brightness(70%);
+    }
