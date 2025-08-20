@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: url(https://images4.alphacoders.com/137/thumb-1920-1370522.png);
+      background-position: center;
+      background-size: cover;
+    }
+
+    .container {
+      background:transparent;
+      width: 350px;
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 10px 25px rgba(11, 7, 243, 0.5);
+      text-align: center;
+      position: relative;
+      transition: 0.5s;
+    }
+
+    h2 {
+      margin-bottom: 25px;
+      color: #37a6da;
+      text-shadow: 4px 4px #fff;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group input {
+      width: 75%;
+      padding: 12px;
+      border-radius: 8px;
+      border: 1px solid #ffffff;
+      outline: none;
+      transition: 0.10s;
+      align-items: center;
+      background: transparent;
+    }
+
+    .form-group input:focus {
+      border-color: #04a1fc;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      background: #667eea;
+      color: #f3ebeb;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: #5a67d8;
+    }
+
+    p {
+      margin-top: 15px;
+      font-size: 14px;
+      color: #d3c8c8;
+    }
+
+    .form-group {
+    position: relative;
+    margin-bottom: 20px;
+  }
+
+  
