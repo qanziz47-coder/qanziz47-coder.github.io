@@ -1,0 +1,167 @@
+ * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+  }
+
+ 
+     .navbar {
+      background: linear-gradient(90deg, #1915f1, #105dc2);
+      padding: 15px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px; /* jarak antar tombol */
+      box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+    }
+
+    /* Tombol */
+    .navbar a {
+      background: #4895d4;
+      color: #e0eef3;
+      border: none;
+      padding: 12px 25px;
+      border-radius: 30px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .navbar a:hover {
+      background: #1307b9;
+      color: #0c3869;
+      transform: scale(1.1);
+      box-shadow: 0 5px 10px rgba(0,0,0,0.3);
+    }
+
+.container{
+    display: flex;
+    width: max-content;
+    gap: 1rem;
+    padding: 45px;
+}
+
+/* -------- diatas pakek bantuan ai di bawah buatan aku------------ */
+
+
+.horizontal-scroll{
+    width:100%;
+    overflow-x: scroll;
+    scrollbar-color:transparent;
+}
+
+
+.horizontal-scroll::-webkit-scrollbar{
+    display: none;
+}
+
+body{
+  background: linear-gradient(#3C9DD0,#FFFFFF,#E74C3C,#F4C542);
+}
+h2{
+    color:wheat;
+    text-shadow: 5px 5px  rgb(124, 120, 120);
+    font-size: 30px;
+    text-align: center;
+}
+
+div:hover .lkh:not(:hover){
+    transform: scale(.85);
+}
+
+div:hover .lkh:not(:hover){
+    opacity: 0.10;
+}
+
+.item .lkh{
+    transition: 0.5s ease;
+    cursor: pointer;
+    border-radius: 20px;
+}
+
+.item:hover{
+    transform: scale(1.1);
+}
+
+h1{
+    background: linear-gradient(rgb(89, 0, 255),rgb(19, 60, 243));
+    color: wheat;
+    padding:40px;
+    text-align: center;
+    border-radius: 50px;
+}
+
+h1{
+    font-size: 35px;
+    font-family: cursive;
+}
+
+video{
+    text-align: center;
+    width: 75%;
+    margin-left: 140px;
+    margin-right: 50px;
+    border-radius: 30px;
+    padding: 20px;
+}
+
+.cerita{
+  font-family:sans-serif;
+  font: size 90px;
+  color:rgb(3, 3, 34); 
+  text-align: justify;
+  padding: 30px;
+}
+
+.qwer{
+  text-align: center;
+  padding: 30px;
+  background: rgb(4, 28, 65);
+  color: white;
+  border: 5px solid white;
+}
+
+.ghj{
+  text-align: center;
+  color: rgb(83, 64, 14);
+  font-size:30px;
+  justify-content: center;
+  font-family: georgia;
+  text-shadow: 2px 3px rgb(255, 143, 63);
+}
+ .erty{
+  text-align: center;
+  font-size: 35px;
+  font-family: 'Franklin Gothic Medium';
+  color: rgb(193, 28, 235);
+  text-shadow: 6px 5px aqua;
+ }
+
+ .cerita2{
+  font-size: 17px;
+  padding: 15px;
+  color: rgb(56, 20, 90);
+  text-align: justify;
+ }
+ .cerita3{
+  text-align: justify;
+  padding: 20px;
+  color: rgb(23, 82, 82);
+  font-size: 18px;
+ }
+
+ .utiopa{
+  text-align: center;
+  padding: 10px;
+  font-size: 35px;
+  font-family:Franklin Gothic Medium;
+  color: rgb(15, 170, 170);
+  text-shadow: 4px 4px rgb(25, 85, 85);
+ }

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subscription Payment</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 70%;
+            max-width: 900px;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .left {
+            width: 60%;
+        }
+        .right {
+            width: 35%;
+            padding-left: 20px;
+        }
+        h2 {
+            text-align: center;
+            font-size: 1.5rem;
+            color: #333;
+        }
+        .section {
+            margin-bottom: 20px;
+        }
+        .section h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+        .section p {
+            font-size: 1rem;
+            color: #555;
+        }
+        .price {
+            font-size: 1.5rem;
+            color: #333;
+            font-weight: bold;
+        }
+        .input-group {
+            margin-bottom: 10px;
+        }
+        .input-group label {
+            font-size: 0.9rem;
+            display: block;
+            color: #555;
+        }
+        .input-group input, .input-group select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .input-group input:focus {
+            outline: none;
+            border-color: #007bff;
+        }
+        .payment-method img {
+            margin-right: 10px;
+            width: 40px;
+        }
+        .payment-method {
+            display: flex;
+            align-items: center;
+        }
+        .btn {
+            width: 100%;
+            background-color: #007bff;
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+            transform: scale(1.1);
+            border-radius: 1000px;
+            background: linear-gradient(blue,red);
+            color:aqua;
+        }
+        .total {
+            font-size: 1.2rem;
+            color: #333;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Left Section (Subscription Info) -->
+        <div class="left">
+            <img src="OIP-removebg-preview.png" alt="">
+            <div class="section">
+                <h3>Doraemon langganan</h3>
+                <p>pembayaran setiap bulan</p>
+                <div class="price"></div>
+            </div>
+
+            <div class="section">
+                <h3>Subtotal</h3>
+                <p>Rp35.000</p>
+            </div>
+            <div class="section">
+                <h3>pajak(2,5%)</h3>
+                <p>Rp2.500</p>
+            </div>
+
+            <div class="total">
+                <p>Total: <strong>Rp37.500</strong></p>
+            </div>
+        </div>
+
+        <!-- Right Section (Payment Form) -->
+        <div class="right">
+            <h3>informasi pembayaran</h3>
+            <div class="input-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="Email kamu" required>
+            </div>
+
+            <h3>metode pembayaran</h3>
+            <div class="input-group payment-method">
+                <img src="visa.png" alt="Visa">
+                <img src="logo.png" alt="Mastercard">
+                <input type="text" placeholder="Card number" required>
+            </div>
+            <div class="input-group">
+                <label for="exp-date">code </label>
+                <input type="text" id="exp-date" placeholder="MM / YY" required>
+            </div>
+            <div class="input-group">
+                <label for="cvc">Security code</label>
+                <input type="text" id="cvc" placeholder="code" required>
+            </div>
+
+            <h3>Nama pelanggan</h3>
+            <div class="input-group">
+                <label for="full-name">Full name</label>
+                <input type="text" id="full-name" placeholder="Full Name" required>
+            </div>
+
+            <button onclick="kk()"  class="btn">bayar sekarang</button>
+        </div>
+    </div>
+    <script>
+        function kk() {
+  // Dummy login
+  if(alert("SELAMAT ANDA KENA PRANK 🎉🎉, TENANG WEBISTE INI TIDAK PERBAYAR MELAINKAN GRATIS")) {
+  }
+  else{
+    window.location.href ="index.html"
+  }
+        }
+    </script>
+</body>
+</html>

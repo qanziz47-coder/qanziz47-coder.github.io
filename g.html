@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paket Langganan</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background:url(https://i.pinimg.com/originals/a3/9f/df/a39fdf30d4d76317ce2a08208ea8a8f5.jpg);
+            background-position: center;
+            background-size: cover;
+            color: white;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 20px;
+        }
+        .package {
+            background:url(https://t4.ftcdn.net/jpg/03/78/38/01/360_F_378380115_CHfN9nXkCa2Hnmzu6HhPbIAr6mb3U12W.jpg);
+            background-size: cover;
+            background-position: center;
+            box-shadow: 0 4px 30px goldenrod;
+            margin: 50px;
+            padding: 20px;
+            border-radius: 8px;
+            width: 250px;
+            text-align: center;
+        }
+        div:hover .package:not(:hover){
+        filter: brightness(40%);}
+
+        .package:hover{
+            box-shadow: 0 4px 30px rgb(192, 171, 115);
+            transform: scale(1.2);
+        }
+        .package h3 {
+            margin: 0;
+            font-size: 1.2rem;
+        }
+        .package p {
+            font-size: 1rem;
+            color: #aaa;
+        }
+        .price {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        .package button {
+            background-color: #f56e1a;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+            width: 100%;
+        }
+        .package button:hover {
+            background-color: #ff8c42;
+            transform: scale(1.1);
+        }
+        .package-icons {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .package-icons img {
+            width: 30px;
+            height: 30px;
+        }
+        .title {
+            text-align: center;
+            font-size: 2rem;
+            padding: 20px;
+            background-color: #123549;
+            border-bottom: 3px solid white;
+        }
+        .qwer{
+            text-align: center;
+            margin: 20px;
+            padding: 2px;
+            font-size: 10px;
+        }
+        .home a{
+            text-align: right;
+            display: flex;
+            text-decoration: none;
+            font-size: 20px;
+            color: white;
+            margin-left: 20px;
+        }
+        .home a:hover{
+            color: #4981a1;
+            text-shadow: 0 1px rgb(165, 138, 75);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="title">
+       <img src="OIP-removebg-preview.png" width="145" alt="">
+       <div class="home">
+        <a href="art.html">Kembali ke Home</a>
+       </div>
+    </div>
+
+    <div class="container">
+        <!-- Platinum Package -->
+        <div class="package">
+            <h3>ドラえもんプラチナ</h3>
+            <p>Bonus gratis 2 hari khusus pelanggan baru dan bisa digunakan di hp saja</p>
+            <div class="package-icons">
+            </div>
+            <div class="price">Rp9.000</div>
+            <button onclick="lk()">Pilih Paket</button>
+        </div>
+
+        <!-- Platinum Extra Package -->
+        <div class="package" style="background-color: #800000;">
+            <h3>ドラえもん プラチナエクストラ</h3>
+            <p>Bonus gratis 15 hari khusus pelanggan baru dan bisa digunakan di hp dan tablet </p>
+            <div class="package-icons">
+            </div>
+            <div class="price">Rp15.000</div>
+            <button onclick="op()">Pilih Paket</button>
+        </div>
+
+        <!-- Ultimate Package -->
+        <div class="package" style="background-color: #990033;">
+            <h3>Ultimate</h3>
+            <p>Diskon 50% dari 70rb Paket 30 hari semua perangkat</p>
+            <div class="package-icons">
+            </div>
+            <div class="price">Rp35.000</div>
+            <button onclick="iu()">Pilih Paket</button>
+        </div>
+    </div>
+    <div class="qwer">
+        <p>&copy; 2026 hafidzzaky.c
+        <p>このウェブサイトは、chatgptさんの協力を得て、私自身で作成しました。ありがとうございます。ぜひご覧ください。</p>
+    </div>
+    <script>
+function lk() {
+  if(window.location.href ="paket1.html") {
+  }
+}   
+function op() {
+    if(window.location.href ="paket2.html") {
+
+    }
+}
+function iu() {
+    if(window.location.href ="paket3.html") {
+        
+    }
+}
+</script>
+</body>
+</html>
