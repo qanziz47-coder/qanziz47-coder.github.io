@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>MovieStream — Situs Film Sederhana</title>
+  <style>
+    :root{
+      --bg:#0f1724; --card:#0b1220; --accent:#6b6eff; --muted:#94a3b8; --glass: rgba(255,255,255,0.04);
+      --maxw:1200px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; font-family:Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+      background:linear-gradient(180deg,#071027 0%, #0d1726 100%); color:#e6eef8; -webkit-font-smoothing:antialiased;
+      padding:32px; display:flex; justify-content:center;
+    }
+    .container{width:100%; max-width:var(--maxw)}
+
+    header{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:24px}
+    .brand{display:flex;gap:12px;align-items:center}
+    .logo{width:56px;height:56px;border-radius:12px;background:url(logo\ \(2\).jpeg);display:flex;align-items:center;justify-content:center;font-weight:700;color:#06203a}
+    h1{margin:0;font-size:20px}
+    p.lead{margin:0;color:var(--muted);font-size:13px}
+
+    .controls{display:flex;gap:12px;align-items:center}
+    .search{background:var(--glass);border:1px solid rgba(255,255,255,0.04);padding:8px 12px;border-radius:10px;min-width:220px;display:flex;align-items:center;gap:8px}
+    .search input{background:transparent;border:0;outline:none;color:inherit;width:100%}
+    .btn{background:linear-gradient(90deg,var(--accent),#f97316);border:0;padding:10px 14px;border-radius:10px;color:#061021;font-weight:600;cursor:pointer}
+
+    main{display:block}
+    .hero{background:linear-gradient(90deg, rgba(255,255,255,0.02), transparent);padding:18px;border-radius:14px;margin-bottom:20px;display:flex;gap:18px;align-items:center}
+    .hero-left{flex:1}
+    .hero-right{width:180px}
+    .poster{width:100%;border-radius:10px;box-shadow:0 10px 30px rgba(2,6,23,0.6)}
+
+    .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:16px}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:12px;padding:10px;transition:transform .24s ease, box-shadow .24s;cursor:pointer}
+    .card:hover{transform:translateY(-6px) scale(1.02);box-shadow:0 18px 40px rgba(2,6,23,0.6)}
+    .thumb{width:100%;height:260px;border-radius:8px;object-fit:cover;display:block}
+    .meta{padding-top:8px;display:flex;justify-content:space-between;align-items:center}
+    .title{font-weight:700;font-size:14px}
+    .sub{font-size:12px;color:var(--muted)}
+
+    /* modal */
+    .modal-backdrop{position:fixed;inset:0;background:linear-gradient(180deg, rgba(2,6,23,0.6), rgba(2,6,23,0.85));display:none;align-items:center;justify-content:center;padding:28px;z-index:200}
+    .modal{width:100%;max-width:980px;background:var(--card);border-radius:12px;overflow:hidden}
+    .modal iframe{width:100%;height:560px;border:0;display:block}
+    .modal .mhead{display:flex;justify-content:space-between;align-items:center;padding:12px 16px}
+    .close{background:transparent;border:0;color:var(--muted);font-weight:700;cursor:pointer}
+
+    /* responsive tweaks */
+    @media (max-width:900px){
+      .hero{flex-direction:column}
+      .modal iframe{height:320px}
+      .thumb{height:200px}
+    }
+    @media (max-width:520px){
+      body{padding:16px}
+      .thumb{height:160px}
+    }
+
+    /* simple footer */
+    footer{margin-top:24px;color:var(--muted);font-size:13px;text-align:center}
+    a{
+      color: rgb(12, 3, 3);
+      border:2px solid white;
+      background-color: white;
+      border-radius: 20px;
+      text-decoration: none;
+      font-size: 15px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo">MD</div>
+        <div>
+          <h1>DORAEMONmovie</h1>
+          <p class="lead"><a href="art.html">kembali ke home</a></p>
+        </div>
+      </div>
+
+      <div class="controls">
+        <div class="search">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden><path d="M21 21l-4.35-4.35" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <input id="q" placeholder="Cari film..." />
+        </div>
+        <button class="btn" id="btn-filter">CARI</button>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-left">
+          <h2 style="margin:0;font-size:20px">DORAEMON MOVIE ART WORLD TALES</h2>
+          <p style="color:var(--muted);margin-top:6px">DORAEMON MOVIE ART WORLD TALES, SUDAH TAYANG (AYO SEGERA MENONTON!!)</p>
+        </div>
+        <div class="hero-right">
+          <img class="poster" src="doraemon movie art world tales.png.jpg" alt="poster" />
+        </div>
+      </section>
+
+      <section>
+        <div class="grid" id="movieGrid">
+          <!-- Movie cards generated by JS -->
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      © 2025 MovieDORAEMON — hafidzzaky AIの支援を受けて.
+    </footer>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal-backdrop" id="backdrop" aria-hidden>
+    <div class="modal" role="dialog" aria-modal="true">
+      <div class="mhead">
+        <div>
+          <strong id="mtitle">Judul Film</strong>
+          <div id="msub" style="color:var(--muted);font-size:13px">Trailer</div>
+        </div>
+        <div>
+          <button class="close" id="closeBtn">Tutup ✕</button>
+        </div>
+      </div>
+      <iframe id="player" src="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+  </div>
+
+  <script>
+    const movies = [
+      { title: 'DORAEMON ART WORLD TALES', year: 2025, rating:10.9, img: 'doraemon movie art world tales.png.jpg', video: 'https://www.bilibili.tv/id/video/4796605589755904?bstar_from=bstar-web.homepage.recommend.all' },
+      { title: 'DORAEMON EARTH SYMPHONY', year: 2024, rating: 10, img: 'doraemon movie dunia musik.png.jpg', video: 'https://www.bilibili.tv/id/video/4792532838257152?bstar_from=bstar-web.homepage.recommend.all' },
+      { title: 'DORAEMON SKY UTOPIA', year: 2023, rating: 10, img: 'doraemon movie utopia.png.webp ', video: 'https://www.bilibili.tv/id/video/4795135065069056?bstar_from=bstar-web.homepage.recommend.all' },
+      { title: 'Doraemon: Nobita and the Birth of Japan', year: 2016, rating: 10, img: 'doraemon movie menjelajah masa lalu.jpg', video: 'https://www.bilibili.tv/id/video/4787044976563712?bstar_from=bstar-web.homepage.recommend.all' },
+      { title: 'Doraemon: Nobita Adventure on Treasure Island', year: 2018, rating: 10, img: 'doraemon movie bajak laut.png.jpg', video: 'https://www.bilibili.tv/id/video/2044696004?bstar_from=bstar-web.homepage.recommend.all' },
+      { title: 'Doraemon the Movie: Nobita Great Adventure in the Antarctic Kachi Kochi', year: 2017, rating: 10, img: 'doraemon movie dunia es.png.jpg', video: 'https://www.bilibili.tv/id/video/4791297280311808?bstar_from=bstar-web.homepage.recommend.all' },
+      { title:'Doraemon: Nobitas Space Heroes', year:2015, rating:10,img:'doraemon pahlwan.png.jpg', video:'https://www.bilibili.tv/id/video/4791297119355392?bstar_from=bstar-web.homepage.recommend.all'},
+      { title:'Doraemon: Nobitas Little Star Wars', year:2021, rating:10,img:'doraemon movie luar angkasa.png.jpg', video:'https://www.bilibili.tv/id/video/4795600317061120?bstar_from=bstar-web.homepage.recommend.all'},
+      { title:'Doraemon: Nobita New Dinosaur ', year:2020, rating:10,img:'doraemon movie dinosorus.png.jpg', video:'https://www.bilibili.tv/id/video/2040822914?bstar_from=bstar-web.homepage.recommend.all'},
+      { title:'Doraemon: Nobita Chronicle of the Moon Exploration', year:2019, rating:10,img:'doraemon movie dunia kelinci.png.jpg', video:'https://www.bilibili.tv/id/video/4788702886763008?bstar_from=bstar-web.homepage.recommend.all'},
+      { title:'Doraemon: Nobita in the New Haunts of Evil Peko and the Five Explorers', year:2014, rating:10,img:'n1.jpg', video:'https://www.bilibili.tv/id/video/4788199391106560?bstar_from=bstar-web.homepage.recommend.all'},
+      { title:'Doraemon: Nobita Secret Gadget Museum', year:2013, rating:10,img:'doraemon movie dektetif.png.webp', video:'https://www.bilibili.tv/id/video/2041372557?bstar_from=bstar-web.homepage.recommend.all'},
+      { title:'Doraemon: Nobita and the Island of Miracles ~Animal Adventure', year:2012, rating:10,img:'doraemon di dunia hewan purba.jpg', video:'https://www.bilibili.tv/id/video/2046731050?bstar_from=bstar-web.homepage.recommend.all'},
+      { title:'Doraemon: Nobita and the New Steel Troops:Winged Angels(dub:indo)', year:2011, rating:8.2,img:'doraemon dan robot megatobia.webp', video:'https://www.bilibili.tv/id/video/2047286093?bstar_from=bstar-web.homepage.recommend.all'},
+      { title:'Doraemon: Nobita Great Battle of the Mermaid King ', year:2010, rating:9,img:'n2.jpg', video:'https://www.bilibili.tv/id/video/2041914667?bstar_from=bstar-web.homepage.recommend.all'},
+      { title:'doraemon movie Rekor Baru Spaceblazer Nobita', year:2009, rating:7.5,img:'n3.jpg', video:'https://www.bilibili.tv/id/video/2044289112?bstar_from=bstar-web.homepage.recommend.all'},
+      { title:'Doraemon the Movie: Nobita and the Green Giant Legend', year:2008, rating:8.5,img:'n4.png', video:'https://www.bilibili.tv/id/video/2049592554?bstar_from=bstar-web.homepage.recommend.all'},
+      { title:'Doraemon: Nobita and the Windmasters', year:2003, rating:6.5,img:'doraemon di dunia angin.jpg', video:'https://www.bilibili.tv/id/video/2042043994?bstar_from=bstar-web.homepage.recommend.all'},
+      { title:'Stand by Me Doraemon', year:2014, rating:10,img:'doraemon standy me 1.jpg', video:'https://www.bilibili.tv/id/video/4791296733872128?bstar_from=bstar-web.homepage.recommend.all'},
+      { title:'Stand by Me Doraemon 2', year:2020, rating:100,img:'doraemon stand by me 2 .png.webp', video:'https://www.bilibili.tv/id/video/2007345752?bstar_from=bstar-web.homepage.recommend.all'},
+    ];
+
+    const grid = document.getElementById('movieGrid');
+    const backdrop = document.getElementById('backdrop');
+    const player = document.getElementById('player');
+    const mtitle = document.getElementById('mtitle');
+    const msub = document.getElementById('msub');
+    const closeBtn = document.getElementById('closeBtn');
+
+    function createCard(m){
+      const el = document.createElement('div');
+      el.className = 'card';
+      el.tabIndex = 0;
+      el.innerHTML = `
+        <img class="thumb" src="${m.img}" alt="${m.title}" />
+        <div class="meta">
+          <div>
+            <div class="title">${m.title}</div>
+            <div class="sub">${m.year} • ⭐ ${m.rating}</div>
+          </div>
+          <div>
+            <button class="btn" data-video="${m.video}" data-title="${m.title}">Play</button>
+          </div>
+        </div>`;
+
+      // open on click anywhere on card
+      el.addEventListener('click', (e)=>{
+        const btn = el.querySelector('button');
+        openModal(btn.dataset.video, btn.dataset.title);
+      });
+
+      // keyboard support
+      el.addEventListener('keypress',(e)=>{ if(e.key==='Enter') el.click(); });
+
+      return el;
+    }
+
+    function render(list){
+      grid.innerHTML='';
+      list.forEach(m=>grid.appendChild(createCard(m)));
+    }
+
+    function openModal(videoUrl,title){
+      mtitle.textContent = title;
+      msub.textContent = 'Trailer / Demo';
+      player.src = videoUrl + '?autoplay=1&rel=0';
+      backdrop.style.display = 'flex';
+      backdrop.scrollTop = 0;
+    }
+
+    function closeModal(){
+      player.src = '';
+      backdrop.style.display = 'none';
+    }
+
+    closeBtn.addEventListener('click', closeModal);
+    backdrop.addEventListener('click', (e)=>{ if(e.target === backdrop) closeModal(); });
+    document.addEventListener('keydown',(e)=>{ if(e.key==='Escape') closeModal(); });
+
+    // search
+    document.getElementById('q').addEventListener('input',(e)=>{
+      const q = e.target.value.toLowerCase().trim();
+      if(!q) render(movies);
+      else render(movies.filter(m=> (m.title+''+m.year).toLowerCase().includes(q)));
+    });
+
+    // initial render
+    render(movies);
+  </script>
+</body>
+</html>

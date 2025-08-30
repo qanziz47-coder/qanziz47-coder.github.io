@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="light">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>pembuat WEBISTE</title>
+  <meta name="description" content="CV Online – Portofolio dan Riwayat Hidup">
+  <style>
+    :root{
+      --bg: #0b0e14;          /* dark */
+      --card: #11151f;
+      --text: #e6e6e6;
+      --muted: #9aa4b2;
+      --brand: #6ee7b7;       /* teal-mint */
+      --accent: #a78bfa;      /* purple */
+      --border: #232a36;
+      --chip: #1c2433;
+      --link: #8bd5ff;
+      --shadow: 0 10px 30px rgba(0,0,0,.25);
+    }
+    [data-theme="light"]{
+      --bg: #f7f8fb;          /* light */
+      --card: #ffffff;
+      --text: #0f172a;
+      --muted: #5b6472;
+      --brand: #0ea5e9;       /* sky */
+      --accent: #6366f1;      /* indigo */
+      --border: #e9eef5;
+      --chip: #f1f5f9;
+      --link: #0ea5e9;
+      --shadow: 0 10px 30px rgba(2,6,23,.08);
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";background:var(--bg);color:var(--text);}
+    a{color:var(--link);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .container{max-width:1100px;margin-inline:auto;padding:24px}
+    header{display:grid;grid-template-columns:100px 1fr auto;gap:18px;align-items:center;background:var(--card);border:1px solid var(--border);border-radius:18px;padding:18px 20px;box-shadow:var(--shadow)}
+    .avatar{width:100px;height:100px;border-radius:18px;object-fit:cover;border:2px solid var(--border)}
+    h1{font-size:clamp(22px, 3vw, 36px);margin:0}
+    .role{color:var(--muted);margin-top:4px}
+    .header-actions{display:flex;gap:10px}
+    button, .btn{background:var(--text);color:var(--bg);border:none;padding:10px 14px;border-radius:12px;font-weight:600;cursor:pointer;display:inline-flex;align-items:center;gap:8px;box-shadow:var(--shadow)}
+    .btn-outline{background:transparent;color:var(--text);border:1px solid var(--border)}
+    .grid{display:grid;gap:18px;margin-top:18px}
+    @media(min-width:900px){
+      .grid{grid-template-columns:1.2fr 2fr}
+    }
+    .card{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:18px 20px;box-shadow:var(--shadow)}
+    .card h2{margin:0 0 14px;font-size:20px}
+    .about p{margin:0;line-height:1.7;color:var(--text)}
+    .list{display:grid;gap:12px}
+    .item{display:grid;gap:6px;border:1px solid var(--border);border-radius:14px;padding:12px;background:linear-gradient(180deg, transparent, rgba(0,0,0,.03))}
+    .item .top{display:flex;align-items:center;justify-content:space-between;gap:12px}
+    .item .title{font-weight:700}
+    .item .meta{color:var(--muted);font-size:14px}
+    .chips{display:flex;flex-wrap:wrap;gap:8px}
+    .chip{background:var(--chip);border:1px solid var(--border);padding:6px 10px;border-radius:999px;font-size:13px}
+    .skills{display:flex;flex-wrap:wrap;gap:10px}
+    .skill{flex:1 1 140px;background:var(--card);border:1px solid var(--border);border-radius:14px;padding:12px}
+    .meter{height:8px;background:var(--chip);border-radius:999px;position:relative;overflow:hidden;margin-top:8px}
+    .meter > i{position:absolute;inset:0;width:var(--w);background:linear-gradient(90deg,var(--brand),var(--accent));border-radius:999px}
+    footer{margin-top:18px;display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between}
+    .social{display:flex;gap:10px;flex-wrap:wrap}
+    .social a{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--border);background:var(--card);padding:8px 10px;border-radius:12px}
+    /* Print */
+    @media print{
+      .header-actions, .no-print{display:none !important}
+      body{background:#fff;color:#000}
+      .card, header{box-shadow:none;border:1px solid #ddd}
+      a{color:#000;text-decoration:underline}
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <img class="avatar" src="poto.png" alt="Foto Profil" />
+      <div>
+        <h1>MUHAMMAD HAFIDZ ZAKY ALFAJRI</h1>
+        <div class="role">pemula • Depok, Indonesia</div>
+        <div class="social no-print" style="margin-top:10px">
+          <a href="mailto:email@contoh.com" aria-label="Email">📧 qanziz47@gmail.com </a>
+          <a href="https://wa.me/6281401941640" target="_blank" rel="noreferrer">💬 WhatsApp</a>
+        </div>
+      </div>
+      <div class="header-actions no-print">
+        <button id="themeToggle" class="btn-outline" title="Ganti Tema" aria-label="Ganti Tema">
+          <span id="themeLabel">🌙 Mode Gelap</span>
+        </button>
+      </div>
+    </header>
+
+    <main class="grid">
+      <!-- Kolom Kiri -->
+      <section class="card about">
+        <h2>Tentang Saya</h2>
+        <p>
+            "saya adalah seorang pelajar yang sedang belajar mengenai website atau komputer dah itu aja "
+        </p>
+      </section>
+
+      <section class="card">
+        <h2>Keahlian</h2>
+        <div class="skills">
+          <div class="skill">
+            <div>HTML & CSS</div>
+            <div class="meter" style="--w: 70%"><i></i></div>
+          </div>
+          <div class="skill">
+            <div>JavaScript</div>
+            <div class="meter" style="--w: 10%"><i></i></div>
+          </div>
+          <div class="skill">
+            <div>Phyton</div>
+            <div class="meter" style="--w: 2%"><i></i></div>
+          </div>
+          <div class="skill">
+            <div>Node.js</div>
+            <div class="meter" style="--w: 1%"><i></i></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Kolom Kiri (lanjutan) -->
+      <section class="card">
+        <h2>Kontak</h2>
+        <div class="list" id="kontak">
+          <div class="item">
+            <div class="top"><div class="title">Email</div><div class="meta">qanziz47@gmail.com</div></div>
+          </div>
+          <div class="item">
+            <div class="top"><div class="title">Telepon</div><div class="meta">+62 814-0194-1640</div></div>
+          </div>
+          <div class="item">
+            <div class="top"><div class="title">Lokasi</div><div class="meta">depok, Indonesia</div></div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <small>© <span id="year"></span> hafidzzaky — @copyright</small>
+      <div class="social no-print">
+        <a href="art.html">Kembali ke Home</a>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    // Tahun dinamis
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Tema (light/dark) dengan localStorage
+    const html = document.documentElement;
+    const btn = document.getElementById('themeToggle');
+    const label = document.getElementById('themeLabel');
+
+    const saved = localStorage.getItem('theme');
+    if(saved){ html.setAttribute('data-theme', saved); updateLabel(saved); }
+
+    btn?.addEventListener('click', () => {
+      const now = html.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+      html.setAttribute('data-theme', now);
+      localStorage.setItem('theme', now);
+      updateLabel(now);
+    });
+
+    function updateLabel(theme){
+      label.textContent = theme === 'light' ? '🌙 Mode Gelap' : '☀️ Mode Terang';
+    }
+
+    // Smooth scroll untuk anchor
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', e=>{
+        const id = a.getAttribute('href');
+        if(id.length>1){
+          const el = document.querySelector(id);
+          if(el){ e.preventDefault(); el.scrollIntoView({behavior:'smooth', block:'start'}); }
+        }
+      })
+    })
+  </script>
+</body>
+</html>
