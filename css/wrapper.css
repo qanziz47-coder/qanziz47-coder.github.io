@@ -1,0 +1,176 @@
+ .wrapper {
+            position: relative;
+        }
+
+        .sticky-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            z-index: 1;
+            overflow: hidden;
+        }
+
+        .sticky-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .sticky-container::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.1) 50%, rgba(0,0,0,0.4) 100%);
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .tulisan {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            z-index: 3;
+            text-align: center;
+            width: 100%;
+            pointer-events: none;
+        }
+
+        .ani {
+            animation: 3s tulis forwards ease-in-out;
+        }
+
+        @keyframes tulis {
+            from {
+                transform: translateY(100px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .tulisan h1 {
+            font-size: 65px;
+            margin-bottom: 10px;
+            font-weight: 700;
+            letter-spacing: 5px;
+            text-shadow: 0 5px 20px rgba(0,0,0,0.3);
+        }
+
+        .tulisan p {
+            text-align: center;
+            font-size: 22px;
+            letter-spacing: 3px;
+            font-weight: 300;
+        }
+
+        .fa-arrow-down {
+            font-size: 35px;
+            transform: translateY(200px);
+            position: absolute;
+            left: 50%;
+            margin-left: -17px;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(200px); }
+            50% { transform: translateY(220px); }
+        }
+
+        .content-wrapper {
+            position: relative;
+            z-index: 2;
+            background: url(/img/w.jpg);
+            margin-top: 100vh;
+            padding: 60px 20px;
+            border-top: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .content-wrapper::before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 10px;
+            background: linear-gradient(90deg, transparent, #f5a623, #e8b86b, #f5a623, transparent);
+            border-radius: 2px;
+        }
+
+        .content-section {
+            margin: 0 auto 60px;
+            padding: 40px;
+            background: transparent;
+            backdrop-filter: blur(8px);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .content-section::before,
+        .content-section::after {
+            content: '';
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            opacity: 0.3;
+            transition: all 0.3s ease;
+        }
+
+        .content-section::before {
+            top: 15px;
+            left: 15px;
+            border-top: 5px solid #f5a623;
+            border-left: 5px solid #f5a623;
+        }
+
+        .content-section::after {
+            bottom: 15px;
+            right: 15px;
+            border-bottom: 5px solid #f5a623;
+            border-right: 5px solid #f5a623;
+        }
+
+        .content-section:hover::before,
+        .content-section:hover::after {
+            width: 80px;
+            height: 80px;
+            opacity: 0.6;
+        }
+
+        .content-section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            cursor: pointer;
+        }
+
+        .content-section h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+            color: #f5a623;
+            position: relative;
+            display: inline-block;
+        }
+
+        .content-section h2::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, #f5a623, #e8b86b);
+            border-radius: 2px;
+        }

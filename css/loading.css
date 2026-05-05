@@ -1,0 +1,58 @@
+
+        .loading-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 99999;
+            pointer-events: none;
+        }
+        .lid-top {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 50%;
+            background: #000000;
+            transform-origin: top;
+            transition: transform 0.8s cubic-bezier(0.65, 0, 0.35, 1);
+            z-index: 99999;
+        }
+
+
+        .lid-bottom {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 50%;
+            background: #000000;
+            transform-origin: bottom;
+            transition: transform 0.8s cubic-bezier(0.65, 0, 0.35, 1);
+            z-index: 99999;
+        }
+
+        .loading-overlay .lid-top {
+            transform: scaleY(1);
+        }
+
+        .loading-overlay .lid-bottom {
+            transform: scaleY(1);
+        }
+
+        .loading-overlay.reveal .lid-top {
+            transform: scaleY(0);
+        }
+
+        .loading-overlay.reveal .lid-bottom {
+            transform: scaleY(0);
+        }
+
+        body:not(.loaded) .container {
+            visibility: hidden;
+        }
+
+        body.loaded .container {
+            visibility: visible;
+        }

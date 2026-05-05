@@ -1,0 +1,55 @@
+.skil-img img{
+    width: 95px;
+    background-size: cover;
+}
+.skil-img{
+    display: flex;
+    gap: 1.2rem;
+    padding: 20px;
+}
+.bar-h{
+    width: 90%;
+    background:rgb(214, 159, 18);
+    box-shadow: inset 0px 2px 3px rgb(143, 107, 17);
+    border-radius: 20px 0px 0px 20px;
+}
+.progrees{
+    margin-top: 10px;
+}
+.h, .c, .j, .p{
+    padding: 8px;
+    color: rgb(219, 212, 212);
+    font-weight: bold;
+    text-shadow: 2px 3px rgba(0,0,0,0.4);
+}
+.h-t, .js-t, .css-t, .p-t{
+    color:#f5a623;
+    font-weight: bold;
+    font-size: 20px;
+}
+.html-bar, .css-bar, .js-bar, .p-bar{
+    background: rgba(0,0,0,0.1);
+    border-radius: 20px;
+    box-shadow: inset 0px 2px 12px rgba(0,0,0,0.8);
+}
+.bar-c{
+    width: 80%;
+    background:rgb(214, 159, 18);
+    box-shadow: inset 0px 2px 3px rgb(143, 107, 17);
+    border-radius: 20px 0px 0px 20px;
+}
+.bungkus{
+    margin-top: 2%;
+}
+.bar-j{
+    width: 5%;
+    background:rgb(214, 159, 18);
+    box-shadow: inset 0px 2px 3px rgb(143, 107, 17);
+    border-radius: 20px 0px 0px 20px;
+}
+.bar-p{
+    width: 15%;
+    background:rgb(214, 159, 18);
+    box-shadow: inset 0px 2px 3px rgb(143, 107, 17);
+    border-radius: 20px 0px 0px 20px;
+}

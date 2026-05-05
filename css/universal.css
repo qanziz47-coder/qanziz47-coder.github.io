@@ -1,0 +1,50 @@
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', 'Segoe UI', sans-serif;
+            scroll-behavior: smooth;
+        }
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+        body::-webkit-scrollbar {
+            display: none;
+        }
+        .sosial {
+            margin-top: 25px;
+            display: flex;
+            gap: 20px;
+        }
+
+        .sosial a {
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+
+        .sosial .fa-brands {
+            font-size: 28px;
+            color: #f5a623;
+            transition: all 0.3s ease;
+        }
+
+        .sosial a:hover .fa-brands {
+            color: #97681b;
+            transform: translateY(-5px);
+        }
+        .content-section p{
+          color: rgb(255, 255, 255);
+          text-shadow: 3px 4px black;
+        }
+        .hero-about {
+          height: 50vh;
+        }
+        #about, .content-section {
+        scroll-margin-top: 20vh;
+        }
+        #profil, .content-section {
+        scroll-margin-top: 10vh;
+        }
+        .fa-eye{
+            font-size: 18px;
+            padding-right: 5px;
+        }
