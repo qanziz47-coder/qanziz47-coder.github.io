@@ -1,6 +1,6 @@
 # 📦 Portofolio Project — School Project
 
-Aplikasi web peminjaman barang yang dikembangkan sebagai bagian dari proyek pembelajaran di sekolah. Project ini dibuat untuk mengeksplorasi pengembangan web.
+>Aplikasi web peminjaman barang yang dikembangkan sebagai bagian dari proyek pembelajaran di sekolah. Project ini dibuat untuk mengeksplorasi pengembangan web.
 
 ## 🎯 About The Project
 
